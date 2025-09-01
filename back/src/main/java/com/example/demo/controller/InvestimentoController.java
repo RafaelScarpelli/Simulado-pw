@@ -8,6 +8,8 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
+import com.example.demo.dto.InvestimentoRequest;
+import com.example.demo.dto.InvestimentoResponse;
 import com.example.demo.model.Investimento;
 import com.example.demo.service.InvestimentoService;
 
@@ -22,21 +24,13 @@ public class InvestimentoController {
     private InvestimentoService investimentoService;
 
     @PostMapping("/calcular")
-    public ResponseEntity<Double> calcular(@Valid @RequestBody Investimento investimento) {
-        double valorFinal = investimentoService.calcularValorFinal(
-                investimento.getValorInicial(),
-                investimento.getPrazoMeses(),
-                investimento.getTaxaJurosMensal());
-        return ResponseEntity.ok(valorFinal);
+    public ResponseEntity<InvestimentoResponse> calcular(@Valid @RequestBody InvestimentoRequest request) {
+        return ResponseEntity.ok(investimentoService.calcular(request));
     }
 
     @PostMapping
-    public ResponseEntity<Investimento> salvar(@Valid @RequestBody Investimento investimento) {
-        return ResponseEntity.ok(
-                investimentoService.salvarInvestimento(
-                        investimento.getValorInicial(),
-                        investimento.getPrazoMeses(),
-                        investimento.getTaxaJurosMensal()));
+    public ResponseEntity<Investimento> salvar(@Valid @RequestBody InvestimentoRequest request) {
+        return ResponseEntity.ok(investimentoService.salvarInvestimento(request));
     }
 
     @GetMapping

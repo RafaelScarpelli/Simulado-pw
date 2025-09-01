@@ -6,6 +6,8 @@ import java.util.List;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
+import com.example.demo.dto.InvestimentoRequest;
+import com.example.demo.dto.InvestimentoResponse;
 import com.example.demo.model.Investimento;
 import com.example.demo.repository.InvestimentoRepository;
 
@@ -15,13 +17,24 @@ public class InvestimentoService {
     @Autowired
     private InvestimentoRepository repository;
 
-    public double calcularValorFinal(double valorInicial, int prazoMeses, double taxaJurosMensal) {
-        return valorInicial * Math.pow(1 + (taxaJurosMensal / 100), prazoMeses);
+    public InvestimentoResponse calcular(InvestimentoRequest request) {
+        double valorFinal = request.getValorInicial() *
+                Math.pow(1 + (request.getTaxaJurosMensal() / 100), request.getPrazoMeses());
+
+        return new InvestimentoResponse(valorFinal, LocalDate.now());
     }
 
-    public Investimento salvarInvestimento(double valorInicial, int prazoMeses, double taxaJurosMensal) {
-        double valorFinal = calcularValorFinal(valorInicial, prazoMeses, taxaJurosMensal);
-        Investimento investimento = new Investimento(valorInicial, prazoMeses, taxaJurosMensal, valorFinal);
+    public Investimento salvarInvestimento(InvestimentoRequest request) {
+        double valorFinal = request.getValorInicial() *
+                Math.pow(1 + (request.getTaxaJurosMensal() / 100), request.getPrazoMeses());
+
+        Investimento investimento = new Investimento(
+                request.getValorInicial(),
+                request.getPrazoMeses(),
+                request.getTaxaJurosMensal(),
+                valorFinal
+        );
+
         return repository.save(investimento);
     }
 

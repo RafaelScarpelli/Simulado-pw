@@ -24,7 +24,7 @@ function Calculo() {
         prazoMeses: parseInt(prazoMeses),
         taxaJurosMensal: parseFloat(taxaJurosMensal)
       });
-      setValorFinal(resposta.data);
+      setValorFinal(resposta.data.valorFinal); // agora acessa o campo do DTO
     } catch (error) {
       console.error("Erro ao calcular:", error);
       alert("Erro ao calcular investimento.");
