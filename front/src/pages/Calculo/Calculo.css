@@ -1,0 +1,80 @@
+/* Container principal */
+.calculo-container {
+  max-width: 800px;
+  margin: 0 auto;
+  padding: 20px 40px; /* espaçamento das bordas */
+  font-family: Arial, sans-serif;
+}
+
+/* Cabeçalhos */
+h1, h2 {
+  margin-bottom: 15px;
+}
+
+/* Inputs */
+input[type="number"],
+input[type="text"] {
+  padding: 10px;
+  margin: 5px 10px 15px 0;
+  width: 200px;
+  box-sizing: border-box;
+  font-size: 1rem;
+  border-radius: 4px; /* mesmo arredondamento dos botões */
+  border: 1px solid #ccc;
+}
+
+/* Botões */
+button {
+  padding: 10px 15px; /* mesma altura dos inputs */
+  margin: 5px 10px 15px 0;
+  font-size: 1rem;
+  cursor: pointer;
+  background-color: #007bff;
+  color: white;
+  border: none;
+  border-radius: 4px;
+}
+
+/* Hover dos botões */
+button:hover {
+  background-color: #0056b3;
+}
+
+/* Botões de filtro com largura fixa */
+.filtros div button {
+  width: 180px; /* mesma largura para todos os botões de filtro */
+}
+
+/* Filtros */
+.filtros {
+  margin-top: 20px;
+}
+
+.filtros div {
+  margin-bottom: 10px; /* espaçamento vertical entre filtros */
+}
+
+/* Tabela */
+table {
+  width: 100%;
+  border-collapse: collapse;
+  margin-top: 20px;
+}
+
+table th,
+table td {
+  border: 1px solid #ddd;
+  padding: 8px;
+  text-align: center;
+}
+
+table th {
+  background-color: #f2f2f2;
+}
+
+/* Mensagem de valor final */
+p {
+  margin-top: 15px;
+  font-size: 1.1rem;
+  font-weight: bold;
+}

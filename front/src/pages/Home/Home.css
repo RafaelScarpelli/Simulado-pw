@@ -1,0 +1,35 @@
+/* Container principal da Home */
+.home-container {
+  max-width: 800px;
+  margin: 0 auto;
+  padding: 20px 40px; /* padding maior na horizontal para ficar distante da borda */
+  font-family: Arial, sans-serif;
+  text-align: left; /* alinhamento à esquerda */
+}
+
+/* Cabeçalhos */
+h1 {
+  margin-bottom: 15px;
+}
+
+/* Parágrafo da data e hora */
+p {
+  margin-bottom: 20px;
+  font-size: 1.1rem;
+}
+
+/* Botão principal */
+button {
+  padding: 10px 15px;
+  margin: 5px 0;
+  font-size: 1rem;
+  background-color: #007bff;
+  color: white;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+}
+
+button:hover {
+  background-color: #0056b3;
+}

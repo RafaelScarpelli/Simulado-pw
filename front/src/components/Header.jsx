@@ -5,10 +5,10 @@ function Header({ titulo }) {
   return (
     <header style={{ padding: "10px", background: "#222", color: "#fff" }}>
       <h2>{titulo}</h2>
-      {/* <nav>
+      <nav>
         <Link to="/" style={{ marginRight: "10px", color: "#fff" }}>Home</Link>
         <Link to="/calculo" style={{ color: "#fff" }}>Cálculo</Link>
-      </nav> */}
+      </nav>
     </header>
   );
 }

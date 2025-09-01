@@ -1,6 +1,6 @@
 import './App.css';
-import Home from './pages/Home';
-import Calculo from './pages/Calculo';
+import Home from './pages/Home/Home';
+import Calculo from './pages/Calculo/Calculo';
 import { BrowserRouter as Router } from 'react-router-dom';
 import { Routes, Route } from 'react-router-dom';
 
